@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verapex Tech Solutions</title>
+<meta name="description" content="Verapex Tech Solutions is a Kathmandu-based software studio building web platforms, AI tools and custom business systems for clients worldwide.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --snow:#F6F8F9;
+  --paper:#FFFFFF;
+  --ink:#16233A;
+  --ink-soft:#4A5568;
+  --contour:#3A6EA5;
+  --contour-faint:#C9D8E8;
+  --saffron:#E3A33B;
+  --line:#DCE3EA;
+  --display:'Bricolage Grotesque',system-ui,sans-serif;
+  --body:'IBM Plex Sans',system-ui,sans-serif;
+  --wrap:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--snow);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--contour)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--saffron);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0;letter-spacing:-.02em}
+h2{font-size:clamp(2rem,4vw,2.9rem);font-weight:700}
+h3{font-size:1.3rem;font-weight:700}
+p{margin:0}
+.lede{color:var(--ink-soft);max-width:60ch;margin-top:14px}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(246,248,249,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-family:var(--display);font-weight:800;font-size:1.2rem}
+.brand svg{width:30px;height:30px}
+.brand small{font-family:var(--body);font-weight:500;color:var(--ink-soft);font-size:.85rem;margin-left:2px}
+.nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+.nav ul a{color:var(--ink);text-decoration:none;font-weight:500;font-size:.95rem}
+.nav ul a:hover{color:var(--contour)}
+.btn{display:inline-block;background:var(--ink);color:#fff;text-decoration:none;font-weight:600;padding:12px 22px;border-radius:999px;border:2px solid var(--ink);font-size:.95rem}
+.btn:hover{background:var(--contour);border-color:var(--contour)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:#fff}
+@media (max-width:820px){.nav ul{display:none}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:88px 0 96px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(2.6rem,6vw,4.6rem);font-weight:800}
+.hero p.lede{font-size:1.15rem}
+.hero .actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+.summit{width:100%;height:auto}
+.summit path{fill:none;stroke:var(--contour);stroke-width:1.4}
+.summit path.faint{stroke:var(--contour-faint)}
+.summit .peak{fill:var(--saffron)}
+.summit text{font-family:var(--body);font-size:11px;fill:var(--ink-soft)}
+.draw path{stroke-dasharray:1400;stroke-dashoffset:1400;animation:draw 2.4s ease-out forwards}
+.draw path:nth-child(2){animation-delay:.15s}.draw path:nth-child(3){animation-delay:.3s}.draw path:nth-child(4){animation-delay:.45s}.draw path:nth-child(5){animation-delay:.6s}.draw path:nth-child(6){animation-delay:.75s}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media (max-width:820px){.hero{padding:56px 0 64px}.hero .wrap{grid-template-columns:1fr}.summit{max-width:360px;margin:0 auto}}
+
+section{padding:96px 0}
+section.alt{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+@media (max-width:820px){section{padding:64px 0}}
+
+/* services */
+.svc{display:grid;grid-template-columns:repeat(2,1fr);margin-top:48px;border-top:2px solid var(--ink)}
+.svc article{padding:32px 32px 36px 0;border-bottom:1px solid var(--line)}
+.svc article:nth-child(odd){border-right:1px solid var(--line)}
+.svc article:nth-child(even){padding-left:32px}
+.svc p{color:var(--ink-soft);margin-top:10px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tags span{font-size:.82rem;font-weight:500;color:var(--contour);background:#EAF1F8;padding:4px 10px;border-radius:999px}
+@media (max-width:720px){.svc{grid-template-columns:1fr}.svc article,.svc article:nth-child(even){padding:28px 0;border-right:0}}
+
+/* process */
+.steps{list-style:none;padding:0;margin:48px 0 0;display:grid;grid-template-columns:repeat(5,1fr);gap:0;counter-reset:s}
+.steps li{position:relative;padding:0 20px 0 0;counter-increment:s}
+.steps li::before{content:counter(s);display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:var(--paper);border:2px solid var(--contour);font-family:var(--display);font-weight:700;color:var(--contour);position:relative;z-index:1}
+.steps li::after{content:"";position:absolute;top:20px;left:42px;right:0;border-top:2px dashed var(--contour-faint)}
+.steps li:last-child::after{display:none}
+.steps h3{font-size:1.08rem;margin-top:18px}
+.steps p{color:var(--ink-soft);font-size:.95rem;margin-top:6px}
+@media (max-width:900px){.steps{grid-template-columns:1fr;gap:28px}.steps li{padding:0 0 0 60px}.steps li::before{position:absolute;left:0;top:0}.steps li::after{top:42px;left:20px;right:auto;bottom:-28px;border-top:0;border-left:2px dashed var(--contour-faint)}.steps h3{margin-top:8px}}
+
+/* work */
+.work{margin-top:48px;display:grid;gap:20px}
+.case{display:grid;grid-template-columns:1fr 1.3fr auto;gap:28px;align-items:start;padding:28px;background:var(--paper);border:1px solid var(--line);border-radius:14px}
+section.alt .case{background:var(--snow)}
+.case .kind{font-size:.88rem;color:var(--ink-soft);margin-top:6px}
+.case p{color:var(--ink-soft)}
+.case a.visit{white-space:nowrap;font-weight:600;text-decoration:none}
+.case a.visit:hover{text-decoration:underline}
+.note{margin-top:22px;font-size:.92rem;color:var(--ink-soft);max-width:70ch}
+@media (max-width:820px){.case{grid-template-columns:1fr;gap:12px}}
+
+/* coming soon */
+.soon{background:var(--ink);color:#fff;border-radius:20px;padding:56px;display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center;position:relative;overflow:hidden}
+.soon h2{color:#fff}
+.soon p{color:#C8D3E0;margin-top:12px;max-width:56ch}
+.pulse{width:64px;height:64px;border-radius:50%;background:var(--saffron);position:relative}
+.pulse::after{content:"";position:absolute;inset:-10px;border-radius:50%;border:2px solid var(--saffron);opacity:.5;animation:ping 2.2s ease-out infinite}
+@keyframes ping{from{transform:scale(.85);opacity:.7}to{transform:scale(1.35);opacity:0}}
+.soon .tag{display:inline-block;font-weight:600;font-size:.85rem;color:var(--ink);background:var(--saffron);padding:4px 12px;border-radius:999px;margin-bottom:14px}
+@media (max-width:720px){.soon{grid-template-columns:1fr;padding:36px 28px}}
+
+/* about */
+.about{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+.about p+p{margin-top:16px}
+.about .facts{list-style:none;padding:0;margin:28px 0 0;border-top:1px solid var(--line)}
+.about .facts li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.about .facts span:first-child{color:var(--ink-soft)}
+.about .facts span:last-child{font-weight:500;text-align:right}
+@media (max-width:820px){.about{grid-template-columns:1fr;gap:28px}}
+
+/* contact */
+.contact{text-align:center}
+.contact h2{font-size:clamp(2.2rem,5vw,3.6rem)}
+.contact .lede{margin:16px auto 0}
+.contact .actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:32px}
+
+footer{border-top:1px solid var(--line);padding:28px 0;font-size:.9rem;color:var(--ink-soft)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--ink-soft)}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Verapex Tech Solutions home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 27 L16 5 L29 27" fill="none" stroke="#16233A" stroke-width="3" stroke-linejoin="round"/><path d="M9 27 L16 15 L23 27" fill="none" stroke="#3A6EA5" stroke-width="2.4" stroke-linejoin="round"/><circle cx="16" cy="5" r="3" fill="#E3A33B"/></svg>
+      Verapex <small>Tech Solutions</small>
+    </a>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">How we work</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <a class="btn" href="#contact">Start a project</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Honest software, built to reach the top.</h1>
+        <p class="lede">Verapex is a Kathmandu-based studio building web platforms, AI tools and custom business systems for clients around the world. Clear scope, steady updates and code you actually own.</p>
+        <div class="actions">
+          <a class="btn" href="#contact">Start a project</a>
+          <a class="btn ghost" href="#work">See our work</a>
+        </div>
+      </div>
+      <svg class="summit" viewBox="0 0 420 360" role="img" aria-label="Contour map of a mountain summit">
+        <g class="draw">
+          <path class="faint" d="M20 330 C80 300 120 250 160 230 C200 210 230 200 260 215 C300 235 340 290 400 330"/>
+          <path d="M50 300 C100 270 130 220 170 195 C200 178 230 172 255 186 C290 205 320 255 370 300"/>
+          <path class="faint" d="M85 268 C125 240 150 195 180 165 C205 145 230 142 250 155 C278 172 300 215 335 268"/>
+          <path d="M120 236 C150 210 170 170 192 138 C210 115 228 112 243 124 C262 140 278 180 300 236"/>
+          <path class="faint" d="M155 200 C175 180 190 145 204 116 C215 95 228 92 237 101 C250 115 258 150 268 200"/>
+          <path d="M188 160 C198 140 207 112 214 92 C220 76 228 74 233 82 C240 94 243 125 248 160"/>
+        </g>
+        <circle class="peak" cx="222" cy="70" r="7"/>
+        <text x="236" y="62">Built in Kathmandu, 1,400 m</text>
+      </svg>
+    </div>
+  </div>
+
+  <section id="services" class="alt">
+    <div class="wrap">
+      <h2>What we build</h2>
+      <p class="lede">One team for the whole job, from the first sketch to a live, maintained product.</p>
+      <div class="svc">
+        <article>
+          <h3>Web platforms and software</h3>
+          <p>Full-stack web apps, admin portals, booking sites and APIs, built to be easy for your team to run day to day.</p>
+          <div class="tags"><span>Laravel</span><span>PHP</span><span>JavaScript</span><span>Python</span><span>SQL</span></div>
+        </article>
+        <article>
+          <h3>AI and machine learning</h3>
+          <p>Practical AI features: text understanding, search, predictions and data pipelines that plug into the tools you already use.</p>
+          <div class="tags"><span>NLP</span><span>ML models</span><span>Data pipelines</span></div>
+        </article>
+        <article>
+          <h3>AI agents and automation</h3>
+          <p>Chatbots, assistants and automated workflows that take repetitive work off your team's plate.</p>
+          <div class="tags"><span>AI agents</span><span>Chatbots</span><span>Workflow automation</span></div>
+        </article>
+        <article>
+          <h3>Data dashboards and custom systems</h3>
+          <p>Dashboards that show what's happening in your business, and systems shaped around how you actually work.</p>
+          <div class="tags"><span>Power BI</span><span>Streamlit</span><span>Business systems</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="wrap">
+      <h2>How we work</h2>
+      <p class="lede">Working with a team across the world should feel easy. Here's what you can count on from day one.</p>
+      <ol class="steps">
+        <li><h3>Discovery call</h3><p>We learn your goals, users and constraints before anything is quoted.</p></li>
+        <li><h3>Written scope</h3><p>A clear document listing features, timeline and price, agreed before work starts.</p></li>
+        <li><h3>Milestones</h3><p>Work is split into milestones, and you pay as each one is delivered.</p></li>
+        <li><h3>Weekly updates</h3><p>A working preview and a short progress note every week, in your time zone.</p></li>
+        <li><h3>Handover</h3><p>Full source code, documentation and a walkthrough, plus maintenance if you want it.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="work" class="alt">
+    <div class="wrap">
+      <h2>Selected work</h2>
+      <p class="lede">Real projects, live today.</p>
+      <div class="work">
+        <div class="case">
+          <div><h3>Arjun Travel and Tours</h3><p class="kind">Travel agency website and admin portal</p></div>
+          <p>A full booking-enquiry website with a custom admin portal for managing packages, destinations, offers, blog posts and enquiries. Designed in Figma with a UI/UX partner, then built, secured and deployed on AWS.</p>
+          <a class="visit" href="https://arjuntravelandtours.com" target="_blank" rel="noopener">Visit site</a>
+        </div>
+        <div class="case">
+          <div><h3>Nepal Tao Foundation</h3><p class="kind">Non-profit website launch</p></div>
+          <p>Took a stalled launch live by moving the domain's DNS to Cloudflare after the original host's nameservers failed for over ten days.</p>
+          <a class="visit" href="https://nepaltaofoundation.org.np" target="_blank" rel="noopener">Visit site</a>
+        </div>
+        <div class="case">
+          <div><h3>Music store sales dashboard</h3><p class="kind">Interactive data dashboard</p></div>
+          <p>An interactive analytics dashboard on the Chinook music store dataset, showing sales trends, top customers and genre performance.</p>
+          <a class="visit" href="https://chinook-dashboard.streamlit.app" target="_blank" rel="noopener">Open dashboard</a>
+        </div>
+        <div class="case">
+          <div><h3>Rooms in Everest and Deampleway</h3><p class="kind">Production platforms</p></div>
+          <p>Two live production platforms our founder built and maintained as a full-stack developer at Doppler Trade.</p>
+          <a class="visit" href="https://roomsineverest.com" target="_blank" rel="noopener">Visit site</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="news">
+    <div class="wrap">
+      <div class="soon">
+        <div class="pulse" aria-hidden="true"></div>
+        <div>
+          <span class="tag">Coming soon</span>
+          <h2>Something new for colleges in Nepal.</h2>
+          <p>We're building a tool to take one of the most frustrating jobs on campus off your desk. More news soon. If you run a college and want an early look, get in touch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="alt">
+    <div class="wrap about">
+      <div>
+        <h2>Founder-led, from Kathmandu</h2>
+      </div>
+      <div>
+        <p>Verapex was started by Saurabh Aryal, a full-stack developer with over three years of experience shipping production web platforms. When you work with Verapex, you talk directly to the person building your product, without layers of account managers in between.</p>
+        <p>The name says what we care about: <em>vera</em>, truth, and <em>apex</em>, the summit. Honest communication, and work built to the highest standard we can reach.</p>
+        <ul class="facts">
+          <li><span>Founder</span><span>Saurabh Aryal</span></li>
+          <li><span>Based in</span><span>Kathmandu, Nepal</span></li>
+          <li><span>Working with</span><span>Clients worldwide</span></li>
+          <li><span>Founder's portfolio</span><span><a href="https://saurabh-aryal.com.np" target="_blank" rel="noopener">saurabh-aryal.com.np</a></span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Have a project in mind?</h2>
+      <p class="lede">Tell us what you're building. You'll get a reply within one working day.</p>
+      <div class="actions">
+        <a class="btn" href="mailto:saurabharyal10@gmail.com?subject=Project%20enquiry%20for%20Verapex">Email us</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/saurabh-aryal-0b4b80209" target="_blank" rel="noopener">Message on LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; <span id="yr">2026</span> Verapex Tech Solutions. Kathmandu, Nepal.</span>
+    <a href="mailto:saurabharyal10@gmail.com">saurabharyal10@gmail.com</a>
+  </div>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
